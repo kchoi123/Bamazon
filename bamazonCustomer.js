@@ -93,8 +93,9 @@ function quantity() {
         }
         else {
             connection.query("SELECT * FROM products", function (err, response) {
-                if ((response[purchID].stock_quantity - res.action) <= 0) {
+                if ((response[purchID].stock_quantity - res.action) < 0) {
                     console.log("The quantity you entered exceeds our current stock!");
+                    start();
                 }
                 else {
                     console.log("You have purchased " + res.action + " " + response[purchID].product_name + "!\n");
