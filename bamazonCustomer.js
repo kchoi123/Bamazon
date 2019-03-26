@@ -38,14 +38,17 @@ function start() {
             );
         }
 
+        // displaying the table in string
         console.log(table.toString());
 
+        // call the next function
         purchaseID();
     })
 }
 
 // calling for ID to pushcase
 function purchaseID() {
+    // first inquirer prompt on which item to affect
     inquirer.prompt({
         name: "action",
         message: "What is the ID of the item you'd like to purase? [Quit with Q]",
@@ -94,6 +97,7 @@ function quantity() {
                     console.log("The quantity you entered exceeds our current stock!");
                 }
                 else {
+                    console.log("You have purchased " + res.action + " " + response[purchID].product_name + "!\n");
                     var changeQuantity = response[purchID].stock_quantity - res.action;
                     var query = connection.query(
                         "UPDATE products SET ? WHERE ?",
