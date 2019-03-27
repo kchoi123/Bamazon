@@ -51,7 +51,7 @@ function purchaseID() {
     // first inquirer prompt on which item to affect
     inquirer.prompt({
         name: "action",
-        message: "What is the ID of the item you'd like to purase? [Quit with Q]",
+        message: "What is the ID of the item you'd like to purchase? [Quit with Q]",
         type: "input",
         validate: function (value) {
             if (value === "") {
@@ -98,7 +98,9 @@ function quantity() {
                     start();
                 }
                 else {
-                    console.log("You have purchased " + res.action + " " + response[purchID].product_name + "!\n");
+                    console.log("You have purchased " + res.action + " " + response[purchID].product_name + " for:");
+                    // console.log the total price
+                    console.log("$" + (res.action * response[purchID].price));
                     var changeQuantity = response[purchID].stock_quantity - res.action;
                     var query = connection.query(
                         "UPDATE products SET ? WHERE ?",
