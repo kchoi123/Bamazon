@@ -10,4 +10,4 @@
 <hr>
 
 ##### Entire DEMO of Customer interaction to Bamazon
-![searchconcerts](https://giphy.com/gifs/MSfXK9tEh1D3zItSUY/html5)
+![Bamazon](https://media.giphy.com/media/MSfXK9tEh1D3zItSUY/giphy.gif)
